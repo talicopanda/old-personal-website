@@ -1,0 +1,48 @@
+html{
+    margin: 0;
+    padding: 0;
+    background-color: #777;
+}
+
+body {
+    width: 70%;
+    margin: 0 auto;
+    font: 100% Arial, Helvetica, sans-serif;
+    padding: 1em 10%;
+    background: white;
+    border-bottom: 10px solid lightblue;
+}
+
+h2 {
+    font-family: Georgia, "Times News Roman", serif;
+    font-size: 2em;
+    font-weight: bold;
+    margin: 1em 0 .4em;
+    padding: 2.5% 2.5%;
+}
+
+p {
+    line-height: 1.6;
+    text-align: justify;
+    width: 60%;
+    margin: 0;
+    margin-bottom: 1em;
+}
+
+a {
+    text-decoration: none;
+    color: lightcoral;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.headshot {
+    max-width: 30%;
+    height: auto;
+    float: right;
+    border-radius: 5%;
+    padding: 1%;
+    border:2px solid #ddd;
+}
