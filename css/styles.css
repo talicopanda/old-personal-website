@@ -239,13 +239,13 @@ code {
 /* The progress container (grey background) */
 .progress-container {
   width: 100%;
-  height: 8px;
+  height: 10px;
   background: #1D1D1D;
 }
 
 /* The progress bar (scroll indicator) */
 .progress-bar {
-  height: 8px;
+  height: 10px;
   background: #FFE48F;
   width: 0%;
 }
@@ -398,11 +398,16 @@ section {
 em {
 	font-style: italic;
 }
-.full {
-	width: 100%;
-}
 .gray {
 	color: #a9a9a9;
+}
+img {
+    width: 100%;
+}
+.image {
+    height: 20rem;
+    width: 100%;
+    border-radius: 2%;
 }
 
 /* Different backgrounds */
@@ -444,13 +449,6 @@ em {
 .home nav li.current_page_item a { 
 	color: #84848B;
 	box-shadow: none;
-}	
-.home .interests .col-70 {
-    margin-left: -3rem;
-}
-.home .courses {
-    float: right;
-    width: 50%;
 }
 
 /* INTRO */
@@ -561,7 +559,6 @@ em {
 #logos {
 	padding: 3rem 0 3rem;
 }
-
 .no {
 	font-size: 10rem;
 	line-height: 9rem;
