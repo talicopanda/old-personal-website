@@ -1,48 +1,938 @@
-html{
-    margin: 0;
-    padding: 0;
-    background-color: #777;
+/*
+Color Pallete
+#1D1D1D - dark
+#FFE48F - yellow
+#FFFDF8 - white
+#7B7B7B - grey
+#FFFAEA - skin color
+*/
+
+@font-face {
+    font-family: 'Bebas Neue';
+    src: url('fonts/bebasneue_regular-webfont.woff') format('woff'),
+         url('fonts/bebasneue_regular-webfont.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Bebas Neue';
+    src: url('fonts/bebasneue_bold-webfont.woff') format('woff'),
+         url('fonts/bebasneue_bold-webfont.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
 }
 
+html { 
+	font-size:62.5%; /* Matching rem to px */
+	scroll-behavior: smooth;
+}
+
+/* Layout */
+/* ------------------------------------------------- */
+*,
+*:after,
+*:before {
+  margin: 0;
+  padding: 0;
+  /* Removes padding behaviour on widths */
+  -webkit-box-sizing: border-box;
+	 -moz-box-sizing: border-box;
+		  box-sizing: border-box;
+}
+
+/* General */
+/* ------------------------------------------------- */
+body { 
+	font-family: 'Jost', Helvetica, Arial, Sans-Serif; 
+	color: #181818;
+	background: #fff;
+	text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased !important;	
+	font-kerning: normal;
+	font-feature-settings: normal;
+	-moz-font-feature-settings: "kern", "liga", "clig", "calt";
+	-ms-font-feature-settings: "kern", "liga", "clig", "alt";
+	-webkit-font-feature-settings: "kern", "liga", "clig", "calt";
+	font-feature-settings: "kern", "liga", "clig", "calt";
+    border-bottom: 10px solid #FFE48F;
+}
+*::selection { background: #e2e2e2; }
+*::-moz-selection { background: #e2e2e2; }
+
+
+/* LAYOUT */
+/* ------------------------------------------------- */
+
+/* Three containers */
+.container:after, .container-m:after, .container-s:after, .container-full:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.container-full {
+	max-width: 100%;
+	margin: 0px 3% auto;
+}
+.container {
+	max-width: 1200px;
+	margin: 0px auto;
+}
+.container-m {
+	max-width: 900px;
+	margin: 0 auto;
+}
+.container-s {
+	max-width: 700px;
+	margin: 0 auto;
+}
+
+/* Aaaand a grid */
+.flex-grid { 
+	display: -webkit-flex; 
+	display: -ms-flexbox; 
+	display: flex; 
+	-webkit-flex-wrap: wrap; 
+	-ms-flex-wrap: wrap; 
+	flex-wrap: wrap;
+	list-style: none;
+}
+.flex-grid ul {
+	list-style: none;
+}
+.col-100 {
+	width: 100%;
+}
+.col-80 {
+	width: 80%; 
+}
+.col-75 {
+	width: 75%; 
+}
+.col-70 {
+	width: 70%;
+}
+.col-66 {
+	width: 66.66%;
+}
+.col-60 {
+	width: 60%;
+}
+.col-50 {
+	width: 50%; 
+}
+.col-45 {
+	width: 45%; 
+}
+.col-40 {
+	width: 40%; 
+}
+.col-33 {
+	width: 33.33%; 
+}
+.col-30 {
+	width: 30%; 
+}
+.col-25 {
+	width: 25%;
+}
+.col-20 {
+	width: 20%;
+}
+.col-15 {
+	width: 15%;
+}
+.col-10 {
+	width: 10%;
+}
+.col-100, .col-75, .col-70, .col-66, .col-60, .col-50, .col-40, .col-33, .col-30, .col-25, .col-20, .col-15, .col-10 {
+	padding: 0 2.5rem 0 2.5rem;
+}	
+.small-marg {
+	padding: 0 1% 0 1%;
+}
+
+/* TYPOGRAPHY */
+/* ------------------------------------------------- */
 body {
-    width: 70%;
-    margin: 0 auto;
-    font: 100% Arial, Helvetica, sans-serif;
-    padding: 1em 10%;
-    background: white;
-    border-bottom: 10px solid lightblue;
+	font-size: 1.9rem;
+	line-height: 3rem;
 }
-
-h2 {
-    font-family: Georgia, "Times News Roman", serif;
-    font-size: 2em;
-    font-weight: bold;
-    margin: 1em 0 .4em;
-    padding: 2.5% 2.5%;
-}
-
 p {
-    line-height: 1.6;
-    text-align: justify;
-    width: 60%;
-    margin: 0;
-    margin-bottom: 1em;
+	padding: 0 0 3rem;
+}
+.big {
+	font-size: 2.6rem;
+	line-height: 3.6rem;
+	padding: 0 0 3rem; 
+	font-weight: 400;	
+}
+.caption {	
+	font-weight: 400;
+	color: #7B7B7B;
+	display: block;
+	font-size: 1.9rem;
+	line-height: 3rem;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	padding: 1rem 0 1rem;
+}
+h1, .section-title, h1.huge, h1.huger, #ginormous, .navigation span {
+    /*font-family: "Sedan", Georgia, Sans-Serif;*/
+}
+h1 {
+	font-size: 5rem;
+	line-height: 5.5rem;
+	text-align: left;
+	padding: 12rem 0 3rem; 
+	font-weight: 400;
+}
+h1.huge {
+	font-size: 12rem;
+	line-height: 12rem;
+	padding-bottom: 3rem;
+	font-weight: 400;
+}
+h1.huger {
+	font-size: 24rem;
+	line-height: 24rem;
+	padding-bottom: 1.4rem;
+	font-weight: 300;	
+}
+h2 {
+	font-size: 3rem;
+	line-height: 4rem;
+	padding: 1.4rem 0 1.4rem;
+}
+h3 {
+	font-size: 2rem;
+	line-height: 2.6rem;
+	padding: 1.4rem 0 1.4rem;
+}
+h4 {
+	font-size: 1.7rem;
+	line-height: 2.4rem;	
+	padding: 1.4rem 0 1.4rem;
+}
+pre, code {
+	background-color: #FBFAF5;
+	padding: 3rem;
+	margin: 0 0 3rem;
+	overflow-y: scroll;
+	display: block;
+}
+code {
+	margin-bottom: 0;
 }
 
+/* Progress Bar
+---------------------------------------------------- */
+
+/* Style the header: fixed position (always stay at the top) */
+.header {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  background-color: #1D1D1D;
+}
+
+/* The progress container (grey background) */
+.progress-container {
+  width: 100%;
+  height: 8px;
+  background: #1D1D1D;
+}
+
+/* The progress bar (scroll indicator) */
+.progress-bar {
+  height: 8px;
+  background: #FFE48F;
+  width: 0%;
+}
+
+/* Links & buttons */
+/* ------------------------------------------------- */
 a {
-    text-decoration: none;
-    color: lightcoral;
+	color: #0E0E0E; 
+	text-decoration: none;
+	box-shadow: inset 0 -7px 0 #FFE48F;
+}
+a:hover { 
+	color: #0E0E0E;
+	box-shadow: inset 0 -30px 0 #FFE48F;
+}	
+a.btn {
+	background-color: #FFE48F;
+	padding: 1.5rem 4.5rem;
+	border-radius: 6rem;
+	font-weight: 700;
+}
+a.btn:hover {
+	background-color: #0E0E0E;
+	color: #FFE48F;
+	box-shadow: none;
+}
+a.noborder {
+	box-shadow: none;
 }
 
-a:hover {
-    text-decoration: underline;
+/* Navigation */
+/* ------------------------------------------------- */
+.navigation {
+	/*position: sticky;
+	position: -webkit-sticky;*/
+	top: 0px;
+	padding-top: 3rem;
+	z-index: 9999;
+	max-width: 100%;
+	font-size: 2rem;
+	font-weight: 400;
+	/* adjustments for 1975 number */
+	z-index: 100;
+    position: relative;	
+}
+nav {	
+	position: relative;
+	text-align: left;
+	padding: 1rem 0;
+}
+nav a { 
+	box-shadow: none;
+}	
+.menu-primary-container {
+	float: right;
+}
+nav span {
+	color: #9a9a9a;
+}
+#logo {
+	font-weight: 700;
+	box-shadow: none;
+}
+#separator {
+	display: inline-block;
+    width: 3.5rem;
+    height: 2px;
+    margin: 0 0 0.5rem 2rem;
+    background-color: #0E0E0E;
+}
+#logo:hover{
+	unicode-bidi: bidi-override;
+    direction: rtl;
+}
+nav ul {
+	display: block; 
+}
+nav li { 
+	list-style: none; 
+	display: inline-block;
+	padding: 0 0 0 2rem; 
+}
+nav li.current_page_item a, nav li.current_page_parent a, nav li.current-page-ancestor a { 
+	color: #a9a9a9;
+	box-shadow: none;
+}	
+#logo, .menu-primary-container {
+	display: inline-block;
+}	
+
+/* General styles */
+/* ------------------------------------------------- */
+#float-contact {
+	transform: rotate(90deg);
+	position: fixed;
+	right: 0rem;
+	bottom: 9rem;
+	box-shadow: none;
+	color: #7d7d7d;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    z-index: 9999;
+}
+#float-contact:after {
+	margin-left: 1rem;
+	content: "\2192";
+}
+#float-contact:hover {
+    transition:0.5s;
+    -webkit-transition:0.5s;
+    -moz-transition:0.5s;    
+    bottom: 7rem;
+}
+.center, .center h1 {
+	text-align: center;
+}
+.right {
+	text-align: right;
+}
+.icon {
+    vertical-align: middle;
+    float: left;
+    width: 50%;
+    font-size: 3rem;
+}
+.year {
+    float: left;
+    width: 50%;
+    margin-left: 2rem;
+}
+section {
+	padding: 0 0 6rem;
+}
+.first {
+	padding-left: 0;
+}
+.last {
+	padding-right: 0;
+}
+.meta {
+	font-weight: 400;
+	display: block;
+	color: #a9a9a9;
+	padding-bottom: 1rem; 
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+em {
+	font-style: italic;
+}
+.full {
+	width: 100%;
+}
+.gray {
+	color: #a9a9a9;
 }
 
-.headshot {
-    max-width: 30%;
-    height: auto;
+/* Different backgrounds */
+/* ------------------------------------------------- */
+.alt {
+	background-color: #FFFAEA;
+}
+.dark {
+	background-color: #1D1D1D;
+	color: #FFFDF8;
+}
+.dark a {
+	color: #FFFDF8;
+}
+.dark a:hover {
+	color: #FFFDF8;
+	box-shadow: inset 0 -2px 0 #F0EEE5;
+}
+.dark .caption {
+	color: #FFE48F;
+}
+
+/* Home specific */
+/* ------------------------------------------------- */
+.home #logo, .home nav span {
+	display: none;
+	visibility: hidden;
+}
+.home .navigation {
+	background-color: #1D1D1D;
+}
+.home .navigation a {
+	color: #F0EEE5;
+}
+.home .navigation a:hover {
+	color: #F0EEE5;
+	box-shadow: inset 0 -2px 0 #F0EEE5;
+}
+.home nav li.current_page_item a { 
+	color: #84848B;
+	box-shadow: none;
+}	
+.home .interests .col-70 {
+    margin-left: -3rem;
+}
+.home .courses {
     float: right;
-    border-radius: 5%;
-    padding: 1%;
-    border:2px solid #ddd;
+    width: 50%;
+}
+
+/* INTRO */
+#intro section {
+	padding-top: 5rem;
+}
+.home section {
+	padding-top: 6rem;
+	padding-bottom: 6rem;
+}
+.home h1 {
+	font-family: 'Bebas Neue', Sans-Serif;
+	font-weight: 700;
+}
+.home h1{
+    font-size: 10rem;
+    line-height: 10rem;   
+    padding:0 0 1rem;
+    text-align: left;
+    color: #FFE48F;
+    letter-spacing: 5px;
+    z-index: 2;
+}
+.home .role{
+	font-style: normal;
+	font-weight: 400;
+	font-size: 2rem;
+	padding: 0 0 6rem;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+}
+.home h2 {
+	font-size: 4.5rem;
+    line-height: 5.5rem;
+    font-weight: 400;
+    margin-bottom: 0.5em;
+} 
+.home h2 ul {
+    padding: 4% 13% 0;
+    font-size: 3rem;
+    margin: 0;
+    list-style: none;
+}
+.home h2 li:before { 
+    content: "";
+    border-color: transparent #FFE48F;
+    border-style: solid;
+    border-width: 0.35em 0 0.35em 0.45em;
+    display: block;
+    height: 0;
+    width: 0;
+    left: -0.7em;
+    top: 0.7em;
+    position: relative;
+    margin: -0.55em;
+}
+.home .triangles ul {
+    padding: 3% 5% 0;
+    font-size: 2.2rem;
+    margin: 0;
+    list-style: none;
+}
+.home .triangles li:before { 
+    content: "";
+    border-color: transparent #FFE48F;
+    border-style: solid;
+    border-width: 0.35em 0 0.35em 0.45em;
+    display: block;
+    height: 0;
+    width: 0;
+    position: relative;
+    margin: -1em;
+}
+.section-title {
+	font-size: 8rem;
+    line-height: 9rem; 
+    padding-bottom: 0.5rem;
+    font-weight: 300;
+}
+.section-title span {
+	color: #2F3147;
+	font-size: 9rem;
+    line-height: 9rem; 
+    font-weight: 700;
+    display: block;
+}
+.home h3 {
+	font-size: 3.2rem;
+	line-height: 4.2rem;
+	font-weight: 700;
+	padding: 0 0 1rem 2rem;
+}
+#yob {
+	display: block;
+	color: #21233B;
+	font-size: 50rem;
+	position: absolute;
+	top: 22rem;
+	right: 0;
+	z-index: -1;
+	letter-spacing: 1rem;
+}
+#intro .big {
+	font-size: 3.2rem;
+	line-height: 4.5rem;	
+	padding-bottom: 6rem;
+}
+#logos {
+	padding: 3rem 0 3rem;
+}
+
+.no {
+	font-size: 10rem;
+	line-height: 9rem;
+	font-weight: 300;
+	color: #FFE48F;
+}
+
+/* Blog specific */
+/* ------------------------------------------------- */
+.articles li {
+	padding-bottom: 1.5rem;
+	list-style: none;
+}
+.articles .gray {
+	font-size: 1.4rem;
+}
+.buffer {
+	margin-top: 13rem;
+}
+.single article {
+	padding: 0 0 3rem;
+}
+.single article .meta {
+    padding-bottom: 3rem;
+}
+.single h1 {
+	padding-bottom: 1rem;
+}
+.single article ul {
+	list-style-type: disc;
+}
+blockquote {
+	font-style:italic;
+	font-size: 2.4rem;
+	line-height: 3.4rem;
+}
+blockquote cite {
+	font-size: 1.4rem;
+	font-style: normal;
+	line-height:3rem;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	padding: 1rem 0 0;
+	display: block;
+	color: #808080;
+}
+blockquote cite:before {
+	content: "\2014\a0";
+}
+.article-meta p {
+	font-size: 1.5rem;
+	line-height:2.2rem;
+	color: #B8BBC8;
+	padding: 0;
+}
+.article-footer {
+	padding: 6rem;
+	display: none;
+}
+/*#comments {
+	display: none;
+	visibility: hidden;
+}
+#show-comments:focus ~ #comments {
+	display: block;
+	visibility: visible;
+}*/
+#comments ul {
+	list-style: none;
+}
+#comments .avatar {
+	display: none;
+	visibility: hidden;
+}
+#comments .author {
+	font-weight: 700;
+}
+#comments .caption {
+	padding-bottom: 3rem;
+}
+
+#comment-text, #author, #email {
+	width: 500px;
+	border: solid 1px #dcdcdc;
+	padding: 5px;
+	font-family: acumin-pro, Helvetica, Arial, Sans-Serif; 
+	font-size: 1.8rem;
+}
+#comment-text {
+	height: 10rem;
+	width: 500px;
+}
+#submit {
+	border: solid 1px #000;
+	color: #fff;
+	background-color: #000;
+	cursor: pointer;
+	padding: 10px 20px;
+	font-family: acumin-pro, Helvetica, Arial, Sans-Serif; 
+	font-size: 1.4rem;
+	font-weight: bold;
+	text-transform: uppercase;
+	letter-spacing: 1px;	
+}
+p.form-submit {
+	padding: 0;
+}
+#commentform {
+	padding-bottom: 6rem
+}
+
+
+/* Carbonads specific */
+/* ------------------------------------------------- */
+#carbonads {
+	position: relative;
+}
+#carbonads:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+#carbonads a {
+	color: #000;
+	box-shadow: none;
+}
+.carbon-img, .carbon-text {
+	float: left;
+	display: block;
+	margin-right: 1.5rem;
+}
+.carbon-text {
+	font-size: 1.6rem;
+	line-height: 2.2rem;
+}
+.carbon-poweredby {
+	font-size: 1.4rem;
+	position: absolute;
+	bottom: -3rem;
+	left: 0;
+}
+
+/* Tennis */
+.page-template-work-gotcourts section {
+	padding-bottom: 3rem;
+}
+.cover-tennis {
+	background: #fff url("images/cs-tennis/cover.jpg") no-repeat center center;
+	background-size: cover;
+	height: 70rem;
+	margin-bottom: 6rem;
+}
+.shadow-under {
+	box-shadow: 0 15px 10px -10px #cecece;
+}
+.shadow-spread {
+	box-shadow: 0 0px 5px 1px #cecece
+}
+.subtitle {
+	color: #9a9a9a;
+	font-weight: 400;
+	font-size: 1.5rem;
+	line-height: 2.2rem;
+	display: block;
+	text-align: center;
+	font-family: acumin-pro, Sans-Serif;
+}
+
+/* Footer */
+/* ------------------------------------------------- */
+footer .big {
+	padding: 1rem 0 1rem;
+}
+footer {
+	font-size: 1.6rem;
+	padding: 12rem 0 9rem;
+}	
+
+/* Wekzeug */
+/* ------------------------------------------------- */
+.simpel {
+	background: #fff url("images/simpel/cover.jpg") no-repeat top center;
+	background-size: 90%;
+	/*height: 70rem;
+	margin-bottom: 6rem;*/
+}
+.simpel-content {
+	font-family: "Werkzeug", Sans-Serif;
+	margin-top: 100rem;
+}
+.simpel-content h1 {
+	font-weight: 400;
+}
+.simpel-content h1 {
+	position: relative;
+	padding: 0 0 3rem;
+}
+.simpel-content .desc {
+	font-size: 1.8rem;
+	line-height: 2.7rem;
+}
+.simpel-content .alt2 {
+	background-color: #000;
+	color: #fff;
+}
+.simpel-content section.balanced-padding {
+	padding: 6rem 0;
+}
+.simpel-content .altbutton {
+	margin-top: 1rem;
+	display: inline-block;
+	border: none;
+	padding: 1rem 3rem;
+	color: #fff;
+	background-color: #F73D1B;
+	box-shadow: none;
+	text-decoration: none;
+}
+.simpel-content .altbutton:hover {
+	border: none;
+	background-color: #000;
+}
+.simpel-content .alt2 .altbutton:hover {
+	border: solid 2px #fff;
+	color: #fff;
+}
+.simpel-content .alt-text {
+	color: #57CD6F;
+}
+.simpel-content .charset {
+	word-wrap: break-word; 
+	letter-spacing: 0.5rem; 
+	font-size: 3.6rem; 
+	line-height: 5.4rem;
+}
+.simpel-content sup {
+	font-size: 1rem;
+}
+.nav-trigger {
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+}
+
+/* S M A L L   D E V I C E S */
+@media all and (min-width: 1024px) and (max-width: 1199px) {
+	.container-full, .container, .container-m, .container-s {
+		margin: 0px auto;
+		padding-left: 4%;
+		padding-right: 4%;
+	}
+	.home h1 {
+	    font-size: 5.5rem;
+	    line-height: 6.5rem;
+    }	
+	.addition {
+	    margin-top: -28rem;
+    }    
+    .big, footer a {
+    	font-size: 2.2rem;
+    	line-height: 3.4rem;
+    }
+	#ginormous {
+	    font-size: 28rem;
+	    line-height: 24rem;
+	}    
+	#decoration {
+	    height: 40rem;	
+	}
+	.simpel-content {
+	    margin-top: 80rem;
+	}    
+}
+
+@media all and (max-width: 1023px) {
+	.container-full, .container, .container-m, .container-s {
+		width: 90%;
+		margin: 0px auto;
+	}
+	.col-100, .col-80, .col-75, .col-70, .col-66, .col-60, .col-50, .col-40, .col-33, .col-30, .col-25, .col-20, .col-10 {
+		width: 100%;
+		padding: 0;
+	}
+
+	/* The rest of style adjustments */ 
+	#float-contact {
+		display: none;
+		visibility: hidden;
+	}
+	#ginormous {
+	    font-size: 22rem;
+	    line-height: 18rem;
+	}   
+	#hero-container {
+		text-align: center;
+	}
+	#hero-image {
+		position: relative;
+		bottom: 0;
+		width: 75%;
+	}
+	#decoration {
+		display: none;
+	}	
+	.buffer {
+		margin-top: 0rem;
+	}	
+	section {
+		padding-bottom: 3rem;
+	}
+	.home section {
+		padding: 6rem 0;
+	}
+	.skills ul {
+		margin-left: 2rem;
+	}
+	#comment-text, #author, #email {
+		width: 90%;
+	}
+	#comment-text {
+		width: : 90%;
+	}	
+	.simpel {
+		background-size: 100%;
+	}	 
+	.simpel-content {
+	    margin-top: 65rem;
+	}   	
+	.small-50 {
+		width: 50%;
+	}
+	footer .right {
+		text-align: left;
+	}
+
+}
+@media all and (max-width: 414px) {
+	body, #profile, .big, .bigger, .skills ul li {
+		font-size: 1.8rem;
+		line-height: 2.8rem;
+	}
+	#ginormous {
+	    font-size: 9rem;
+	    line-height: 9rem;
+	}  	
+	nav li {
+	    padding: 0 2rem 0 0;
+	}	
+	.home h1 {
+	    font-size: 4.5rem;
+	    line-height: 5.5rem;
+	}
+	h1.huge {
+		font-size: 8rem;
+		line-height: 8rem;
+	}	
+	h1.huger {
+		font-size: 16rem;
+		line-height: 16rem;
+	}
+	h2, .home h2 {
+		font-size: 3.6rem;
+		line-height: 4.2rem;
+	}
+	h3, .home h3 {
+		font-size: 2.8rem;
+		line-height: 3.2rem;
+	}	
+	.simpel {
+		background-size: 100%;
+	}	
+	.simpel-content {
+	    margin-top: 25rem;
+	}   
 }

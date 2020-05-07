@@ -1,124 +1,309 @@
 <!DOCTYPE html>
 <html lang="en">
-    
     <head>
+        <title>Tales Scopinho</title>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Tales Scopinho | Home</title>
         <meta name="description" content="Personal Website for Tales Scopinho">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">	
+        
+        <link rel="shortcut icon" href="res/favicon.ico "> 
         <link rel="stylesheet" href="css/styles.css">
+        <!--- Retrieves Jost font from indestructibletype.com --->
+        <link rel="stylesheet" href="https://indestructibletype.com/fonts/Jost.css" type="text/css" charset="utf-8" />
+        <!--java icon-->
+        <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
     </head>
-    <body>
-        <header role="banner">
-            <h1>Tales Scopinho</h1>
-            <nav role="navigation" id="top">
-                <ul>
-                    <li><a href="index.html" title="Home">Home</a></li>
-                    <li><a href="projects.html" title="Projects">Projects</a></li>
-                    <li><a href="blog.html" title="Blog">Blog</a></li>
-                    <li><a href="entertainment.html" title="Entertainment">Entertainment</a></li>
-                    <li><a href="cv.html" title="Curriculum Vitae"><em>Curriculum Vitae</em></a></li>
-                    <li><a href="contact.html" title="Contact Information">Contact</a></li>
+    <body class="home page-template page-template-page-templates page-template-front-page page-template-page-templatesfront-page-php page page-id-274">
+
+        <a id="float-contact" href="#contact">Contact</a>
+        
+        <div class="navigation">
+            <nav class="container" role="navigation">
+                <ul class="flex-grid">
+                    <li class="col-50"><a href="index.html" id="logo">Tales Scopinho</a>
+                    </li>
+                    <li class="col-50">
+                        <div class="menu-primary-container">
+                            <ul id="menu-primary" class="menu">
+                                <li id="menu-item-746" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-274 current_page_item menu-item-746"><a href="index.html" aria-current="page">About</a></li>
+                                <li id="menu-item-745" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-745"><a href="cv.html"><i>CV</i></a></li>
+                                <li id="menu-item-745" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-745"><a href="cv.html">Blog</a></li>
+                            </ul>
+                        </div>
+                    </li>	
                 </ul>
             </nav>
-        </header>
+        </div>
         
-        <aside>
-            <nav role="navigation">
-                <ul> On this page:
-                    <li><a href="#intro" title="Introduction">Introduction</a></li>
-                    <li><a href="#publications" title="Publications">Publications</a></li>
-                    <li><a href="#projects" title="Seleced Projects">Selected Projects</a></li>
-                    <li><a href="#courses" title="Significant Courses">Significant Courses</a></li>
-                </ul>
-            </nav>
-        </aside>
-        
-        
+        <script>
+            window.onscroll = function() {myFunction()};
+
+            function myFunction() {
+                var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+                var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                var scrolled = (winScroll / height) * 100;
+                document.getElementById("myBar").style.width = scrolled + "%";
+            }
+        </script>
+        <div class="header">
+            <div class="progress-container">
+                <div class="progress-bar" id="myBar"></div>
+            </div>
+        </div>
         <main role="main">
-            <section>
-                <h2 id="intro">Who am I?</h2>
-                <img src="res/headshot.jpg" alt="Headshot" class="headshot">
-                <p>
-                    Hey, my name is Tales Scopinho and I am a 2nd year student at the University of Toronto (UofT) pursuing a Computer Science Specialist as well as Minors in Statistics and Mathematics. I am currently a Director of External Relations at <a href="https://uoft.ai" title="UofTAI" target="_blank">UofT's Artificial Intelligence Group</a>, where I primarily help with the organization of <a href="https://www.projectx2020.com/" title="Project X" target="_blank">Project X</a>, an international machine learning competition. I am also a member of the <a href="https://www.technologyleadershipinitiative.com/" title="Technology Leadership Initiative" target="_blank">Technology Leadership Initiative</a> 2020 Cohort.
-                </p>
-                <h3>Main Academic Interests - still under development :)</h3>
-                <ul>
-                    <li>Machine Learning</li>
-                    <li>Computer Vision</li>
-                    <li>Software Development</li>
-                    <li>History and Philosphy of Science</li>
-                </ul>
-            </section>
+            <div id="intro" class="dark">
+                <section class="container" style="position: relative; z-index: 0;">
+                    <ul class="flex-grid skills">				
+                        <li class="col-33" style="margin-top: 0.7em">
+                            <img id="profile-photo" src="res/headshot.jpg" class="full">
+                        </li>	
+                        <li class="col-66">	
+                            <h1>TALES <br> SCOPINHO</h1>
+                            <h2>Hi, I am a 2<sup>nd</sup> year student at the University of Toronto pursuing a: 
+                                <ul>
+                                    <li>Computer Science Speacialist</li>
+                                    <li>Statistics Minor</li>
+                                    <li>Mathematics Minor</li>
+                                </ul>
+                            </h2>
+                            
+                            <p class="caption">CURRENT POSITIONS</p>
+                            
+                            <div class="triangles">
+                                <ul> 
+                                    <li>Director of External Relations at <a href="https://uoft.ai" title="UofTAI" target="_blank">UofT's Artificial Intelligence Group</a> 
+                                    <p style="padding-left: 2em;">where I contribute to the organization of <a href="https://www.projectx2020.com/" title="Project X" target="_blank">Project X</a>, a north american machine learning competition.</p>
+                                    </li>
+                                    <li>Member of the <a href="https://www.technologyleadershipinitiative.com/" title="Technology Leadership Initiative" target="_blank">Technology Leadership Initiative</a> 2020 Cohort</li>	
+                                </ul>
+                            </div>
+                            
+                    </ul>	
+                </section>
+            </div>
+    
         </main>
         
-        <section>
-            <h2 id="publications">Publications</h2>
-        
-            <!---Make it a link once publications come out--->
-            <dl>
-                <dt>Artificial Neural Networks on Recruiting Athletes* &nbsp; in &nbsp; <i>STEM Fellowship Journal</i></dt>
-                    <dd>Tales Sopinho</dd>
-                    <dd>June 2019</dd>
-                    <dd>*under review</dd>
-            </dl>
+        <section class="container">	
+            <div class="center">
+                <p class="section-title">Selected Projects</p>
+                <p class="caption">Check <a href="projects.html" title="Technology Leadership Initiative">projects</a> for the entire list</p>
+            </div>
+            <p></p><p></p>
+            <ul class="flex-grid">	
+                <li class="col-33">	
+                    <p class="no">image</p>
+                    <p><strong>Genetic Algorithm</strong><br>
+                    Here I need a nice little description about this project that I am just filling up radnom stuff</p>	
+                    <p class="icon"><i class="devicon-python-plain"></i></p>
+                    <p class="right"><a href="https://github.com">Explore project &rarr;</a></p>				
+                </li>	
+                <li class="col-33">	
+                    <p class="no">image</p>
+                    <p><strong>Neural Network from Scratch</strong><br>
+                    Here I need a nice little description about this project that I am just filling up radnom stuff</p>	
+                    <p class="icon"><i class="devicon-python-plain"></i></p>
+                    <p class="right"><a href="https://github.com">Explore project &rarr;</a></p>		
+                </li>
+                <li class="col-33">	
+                    <p class="no">image</p>
+                    <p><strong>Function Ride</strong><br>
+                    Here I need a nice little description about this project that I am just filling up radnom stuff <br>
+                    </p>
+                    <p class="icon"><i class="devicon-java-plain"></i></p>
+                    <p class="right"><a href="https://github.com">Explore project &rarr;</a></p>		
+                </li>
+            </ul>
+            <p></p><p></p><p></p>
+            <div class="center">
+                <p class="section-title">Awards</p>
+            </div>
+            <p></p><p></p>
+            <ul class="flex-grid">	
+                <li class="col-33">	
+                    <p class="no">2020</p>
+                    <p><strong>Award?</strong><br>
+                    Here I need a nice little description about this project that I am just filling up radnom stuff</p>	
+                </li>
+                <li class="col-33">	
+                    <p class="no">2019</p>
+                    <p><strong>First Place: Literature Review Competition</strong><br>
+                    The conference includes presentations from internationally renowned researchers, discussions with the city’s top decision makers and investors, and a showcase of some of the brightest undergraduates undertaking work and research in Artificial Intelligence today.</p>		
+                </li>	
+                <li class="col-33">	
+                    <p class="no">2019</p>
+                    <p><strong>Award?</strong><br>
+                    Here I need a nice little description about this project that I am just filling up radnom stuff <br>
+                    </p>	
+                </li>
+            </ul>
+        </section>	
+        <div class="alt">
+            <section class="container">	
+                <div class="center">
+                    <!---<p class="caption">What do I mean by</p>--->
+                    <p class="section-title">Publications</p>
+                </div>
+                <p></p><p></p>	
+                <ul class="flex-grid">
+                    <li class="col-10">	
+                        <p class="no">01</p>
+                    </li>
+                    <li class="col-40">	
+                        <h3>Artificial Neural Networks on Recruiting Athletes</h3>
+                        <p class="year">2019</p>
+                        <p class="right"><i>STEM Fellowship Journal</i></p>
+                    </li>
+                    <li class="col-50">	
+                        <p>A brief description of the paper (Strategic design is a team effort where success depends on the ability to work with diverse functions and multiple stakeholders. My role is to involve, align and coordinate people with different visions towards reaching the same</p>
+                        <p></p><p></p>
+                    </li>				
+                </ul>
+                <ul class="flex-grid">
+                    <li class="col-50">
+                        <p class="section-title">Main Interests</p>
+                        <p></p>
+                        <div class="interests">
+                            <ul class="flex-grid">
+                                <li class="col-30">	
+                                    <p class="no">01</p>
+                                </li>
+                                <li class="col-70">	
+                                    <h3>Machine<br>Learning</h3>
+                                </li>
+                                <li class="col-30">	
+                                    <p class="no">02</p>
+                                </li>
+                                <li class="col-70">	
+                                    <h3>Computer<br>Vision</h3>
+                                </li>
+                                <li class="col-30">	
+                                    <p class="no">03</p>
+                                </li>
+                                <li class="col-70">	
+                                    <h3>Software<br>Development</h3>
+                                </li>
+                                <li class="col-30">	
+                                    <p class="no">04</p>
+                                </li>
+                                <li class="col-70">	
+                                    <h3>History &amp; Philosophy of Science</h3>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="col-50">
+                        <p class="section-title">Conferences</p>
+                        <p></p>
+                        <ul class="flex-grid">
+                            <li class="col-40">	
+                                <p class="no">2020</p>
+                            </li>
+                            <li class="col-60">	
+                                <h3>Github<br>Satellite</h3>
+                            </li>
+                            <li class="col-40">	
+                                <p class="no">2020</p>
+                            </li>
+                            <li class="col-60">
+                                <h3 style="width: 45rem;">International Conf. on Learning Representations</h3>
+                            </li>
+                            <li class="col-40">	
+                                <p class="no">2020</p>
+                            </li>
+                            <li class="col-60">	
+                                <h3>COVID-19 &amp; AI<br>HAI Stanford</h3>
+                            </li>
+                            <li class="col-40">	
+                                <p class="no">2020</p>
+                            </li>
+                            <li class="col-60">	
+                                <h3>StartAI Conference</h3>
+                            </li>
+                            
+                        </ul>
+                    </li>	
+                </ul>	
+            </section>	
+        </div>
+        <section class="container">	
+                <div class="center">
+                    <p class="section-title">Significant Courses</p>
+                </div>
+                <p></p><p></p>	
+                <ul class="flex-grid">
+                    <li class="col-10">	
+                        <p class="no">01</p>
+                    </li>
+                    <li class="col-40">	
+                        <h3>Intelligence, Artificial<br> and Human</h3>
+                        <p class="year">2020</p>
+                        <p class="right"><i>University of Toronto</i></p>
+                    </li>
+                    <li class="col-50">	
+                        <p>This course presents students with the opportunity to integrate their computer science interests with philosophy, history, and literature by answering questions that include: what is human intelligence? How close are we to replicating it? What ethical challenges are posed by AI on workers, society, and the environment?</p>
+                    </li>	
+                    <li class="col-10">	
+                        <p class="no">02</p>
+                    </li>
+                    <li class="col-40">	
+                        <h3>Computer<br>Organization</h3>
+                        <p class="year">2020</p>
+                        <p class="right"><i>University of Toronto</i></p>
+                    </li>
+                    <li class="col-50">	
+                        <p>Computer structures, machine languages, instruction execution, addressing techniques, and digital representation of data. Computer system organization, memory storage devices, and microprogramming. Block diagram circuit realizations of memory, control and arithmetic functions.</p>
+                    </li>
+                    <li class="col-10">	
+                        <p class="no">03</p>
+                    </li>
+                    <li class="col-40">	
+                        <h3>LearnAI</h3>
+                        <p class="year">2020</p>
+                        <p class="right"><i>University of Toronto</i></p>
+                    </li>
+                    <li class="col-50">	
+                        <p>Introductory machine learning curriculum for undergraduate students presented by University of Toronto's Artificial Intelligence Group.</p>
+                    </li>
+                </ul>
         </section>
-        
-        <section>
-        <h2 id="projects">Selected Projects</h2>
-            
-            <p>Go to <a href="projects.html" title="Projects">projects</a> for more.</p>
-
-            <dl>
-                <dt><strong>Function Ride</strong></dt>
-                    <dd><b>Description:</b> lorem ipsun dolor</dd>
-                    <dd><b>Languages:</b> Java</dd>
-                <dt><strong>Genetic Algorithm</strong></dt>
-                    <dd><b>Description:</b> lorem ipsun dolor</dd>
-                    <dd><b>Languages:</b> Python</dd>
-                <dt><strong>CSC 148 stuff</strong></dt>
-                    <dd><b>Description:</b> lorem ipsun dolor</dd>
-                    <dd><b>Languages:</b> Java</dd>
-                <dt><strong>Neural Network from Scratch</strong></dt>
-                    <dd><b>Description:</b> lorem ipsun dolor</dd>
-                    <dd><b>Languages:</b> Python</dd>
-                <dt><strong>This Website</strong></dt>
-                    <dd><b>Description:</b> lorem ipsun dolor</dd>
-                    <dd><b>Languages:</b> HTML&amp;CSS, Javascript</dd>
-            </dl>
-        </section>
-        
-        <section>
-            <h2 id="courses">Significant Courses</h2>
-
-            <h3>University of Toronto</h3>
-            <dl>
-                <dt><b>Intelligence, Artificial and Human</b></dt>
-                    <dd> This course presents students with the opportunity to integrate their computer science interests with philosophy, history, and literature by answering questions that include: what is human intelligence? How close are we to replicating it? How productive/reductive is the brain-computer analogy? What ethical challenges are posed by AI on workers, society, and the environment? Can we put a hold on "progress"?
-                    </dd>
-                <dt><b>Computer Organization</b></dt>
-                    <dd> Computer structures, machine languages, instruction execution, addressing techniques, and digital representation of data. Computer system organization, memory storage devices, and microprogramming. Block diagram circuit realizations of memory, control and arithmetic functions.
-                    </dd>
-            </dl>
-            
-            <h3>Motion Design (<a href="https://www.youtube.com/watch?v=Usq1QTpGxgA&list=PLIu2jbu1aBaDtbr1xSlMoGPOk6gkitwlc" title="Tales Scopinho Motion Design Portfolio" target="_blank">portfolio</a>)</h3>
-            <dl>
-                <dt><a href="https://melies.com/cursos/cinema-efeitos-visuais/motion-graphics" title="Motion at Melies" target=_blank>Motion</a></dt>
-                    <dt><b>School:</b><a href="https://melies.com" title="Melies Creative School" target=_blank>Melies Creative School</a></dt>
-                    <dd>No Motion o aluno aprende os conceitos artísticos e técnicos que possibilitam a realização de obras audiovisuais (vinhetas ou elementos de motion graphics). Com estudos que incluem: Forma Cor Animação
-                    </dd>
-                <dt>Graphix Master</dt>
-                    <dt><b>School:</b><a href="https://n-pix.com" title="N-Pix School" target=_blank>N-Pix</a></dt>
-                    <dd>Description: bla bla bla
-                    </dd>
-            </dl>
-            
-        </section>
+        <div class="motion">
+            <div class="center">
+                <p class="caption">On another note...</p>
+                <h3>Check My <a href="https://www.youtube.com/watch?v=Usq1QTpGxgA&list=PLIu2jbu1aBaDtbr1xSlMoGPOk6gkitwlc" title="Tales Scopinho Motion Design Portfolio" target="_blank">Motion Design Portfolio</a></h3>
+            </div>
+            <p></p>
+            <ul class="flex-grid">
+                <li class="col-20"></li>
+                <li class="col-60">
+                    <p class="caption" style="display: inline">Motion Design Courses:</p>
+                    <p class="courses"><a href="https://melies.com/cursos/cinema-efeitos-visuais/motion-graphics" title="Motion at Melies" target=_blank>Motion</a> at <a href="https://melies.com" title="Melies Creative School" target=_blank><i>Melies Creative School</i></a><br>Graphix Master at <a href="https://n-pix.com" title="N-Pix School" target=_blank><i>N-Pix</i></a></p>
+                </li>
+            </ul>
+            <p></p><p></p>
+        </div>
         
         
-        <footer role="contentinfo">
-            <p>Copyright &copy 2020 Tales Scopinho. All Rights Reserved</p>        
-        </footer>
+        <address role="contentinfo">
+            <footer id="contact" class="dark" role="">	
+                <div class="container">	
+                    <ul class="flex-grid">	
+                        <li class="col-50">			
+                            <p class="section-title">Get in touch</p>
+                        </li>
+                        <li class="col-50 right">
+                            <p class="big"><a href="mailto:tales.scopinho@mail.utoronto.ca">tales.scopinho@mail.utoronto.ca</a> &bull;
+                            <a href="https://www.linkedin.com/in/tales-scopinho-ba055b1a6/">LinkedIn</a>
+                            </p>							
+                            <p>Copyrgiht &copy; 2020 Tales Scopinho.
+                            </p>					
+                        </li>					
+                    </ul>
+                </div>
+            </footer>
+        </address>
+        		
     </body>
 </html>
 
