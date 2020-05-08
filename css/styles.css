@@ -255,7 +255,7 @@ code {
 a {
 	color: #0E0E0E; 
 	text-decoration: none;
-	box-shadow: inset 0 -7px 0 #FFE48F;
+	box-shadow: inset 0 -4px 0 #FFE48F;
 }
 a:hover { 
 	color: #0E0E0E;
@@ -411,7 +411,6 @@ img {
 }
 .inline p {
     display: inline;
-    padding-bottom: 5rem;
 }
 
 /* Different backgrounds */
@@ -425,10 +424,11 @@ img {
 }
 .dark a {
 	color: #FFFDF8;
+    box-shadow: inset 0 -4px 0 #FFE48F;
 }
 .dark a:hover {
 	color: #FFFDF8;
-	box-shadow: inset 0 -2px 0 #F0EEE5;
+	box-shadow: inset 0 -7px 0 #FFE48F;
 }
 .dark .caption {
 	color: #FFE48F;
