@@ -1,43 +1,277 @@
 <!DOCTYPE html>
 <html lang="en">
-    
     <head>
+        <title>Blog: Tales Scopinho</title>
         <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Projects</title>
-        <meta name="description" content="Projects made by Tales Scopinho">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="description" content="Welcome to Tales Scopinho's Personal Blog">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">	
+        <meta name="HandheldFriendly" content="true">
+        
+        <link rel="shortcut icon" href="res/favicon_opposite.ico "> 
         <link rel="stylesheet" href="css/styles.css">
+        <!--- Retrieves Jost font from indestructibletype.com --->
+        <link rel="stylesheet" href="https://indestructibletype.com/fonts/Jost.css" type="text/css" charset="utf-8" />
+        <!--dev icons-->
+        <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
     </head>
-    <body>
-        <header role="banner">
-            <h1>Tales Scopinho</h1>
-            <nav role="navigation" id="top">
-                <ul>
-                    <li><a href="index.html" title="Home">Home</a></li>
-                    <li><a href="projects.html" title="Projects">Projects</a></li>
-                    <li><a href="blog.html" title="Blog">Blog</a></li>
-                    <li><a href="entertainment.html" title="Entertainment">Entertainment</a></li>
-                    <li><a href="cv.html" title="Curriculum Vitae"><em>Curriculum Vitae</em></a></li>
-                    <li><a href="contact.html" title="Contact Information">Contact</a></li>
-                </ul>
-            </nav>
-        </header>
-        
-        <main role="main">
-            <h2>Projects (aka The Fun Zone)</h2>
-            <p>Here I present all the projects I have done along with a more meaningful description.</p>
-        </main>
-        
-        <h3>My First Game</h3>
-            <p>
-                This game June 2018
-            </p>
-        
-        
-        <footer role="contentinfo">
-            <p>Copyright &copy 2020 Tales Scopinho. All Rights Reserved</p>        
-        </footer>
 
-    </body>
+<body class="blog">
+	<a id="float-contact" href="#contact">Contact</a>
+	<div class="navigation">
+		<nav class="container">
+			<ul class="flex-grid">
+				<li class="col-50">
+					<a href="https://scopinho.com" id="logo">Tales Scopinho</a>
+				</li>
+				<li class="col-50">
+					<div class="menu-primary-container">
+                        <ul id="menu-primary" class="menu">
+                            <li id="menu-item-746" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-746"><a href="http://scopinho.com/">About</a></li>
+                            <li id="menu-item-745" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-745"><a    href="https://cv.scopinho.com" alt="Curriculum Vitae"><i>CV</i></a></li>
+                            <li id="menu-item-745" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-746"><a href="https://scopinho.com/blog.html" aria-current="page">Blog</a></li>
+                        </ul>
+                    </div>				
+                </li>	
+			</ul>
+		</nav>
+    </div>
+	<section class="container">
+		<div class="flex-grid">
+			<div class="col-50">
+				<h1 class="huge">Projects</h1>
+                <p>From the most stupid programs to utterly complex projects... <br>
+                Here is a collection of my favourite lines of code (be them intelectually/conceptually interesting or just because I liked the overall net result).</p>
+			</div>	
+			<div class="col-50 buffer">
+				<h2>Here you will find</h2>
+				<ul class="articles">	
+                    <li><a href="#ai">Artificial Intelligence</a></li>
+                    <li><a href="#games">Games</a></li>
+                    <li><a href="#hdl">Hardware Description Language (HDL)</a></li>
+                    <li><a href="#assembly">Assembly Language</a></li>
+                    <li><a href="#stats">Data Science</a></li>
+				</ul>
+			</div>
+		</div>	
+	</section>	
+	<div class="display" style="padding: 6rem 0;">
+		<section class="container">
+            <h2 id="featured" class="section-title">Featured</h2>
+            <ul class="flex-grid">	
+                <li class="col-33">	
+                    <img src="https://www.wgu.edu/content/dam/web-sites/blog-newsroom/blog/images/national/2019/august/grey-hat-hacking.jpg" class="image">
+                    <p><strong>String Guesser GA</strong><br>
+                    Developed a Genetic Algorithm capable of guessing the inputted string. Applied techniques including mutation and crossover to arrive at the desired string in a minimal number of iterations.
+                    <br>This project was a part of the 2020 UofT Researchathon.</p>	
+                    <p class="icon"><i class="devicon-python-plain"></i></p>
+                    <p class="right"><a href="https://github.com" target="_blank">Explore project &rarr;</a></p>				
+                </li>	
+                <li class="col-33">	
+                    <img src="http://www.multiling.tw/wp-content/uploads/2018/07/AdobeStock_199237766-1024x630.jpeg" class="image">
+                    <p><strong>Neural Network from Scratch</strong><br>
+                    Developed an Artificial Neural Network without machine learning libraries (Tensor Flow, Keras, etc) in order to fully grasp the basic fundamentals of an artificial neural network's implementation.</p>	
+                    <p class="icon"><i class="devicon-python-plain"></i></p>
+                    <p class="right"><a href="https://github.com" target="_blank">Explore project &rarr;</a></p>		
+                </li>
+                <li class="col-33">	
+                    <img src="https://www.oriel.ox.ac.uk/sites/default/files/styles/sp_main_wide/public/mathematics.jpg?itok=Hge67u35&timestamp=1465469439" class="image">
+                    <p><strong>Function Ride</strong><br>
+                    Developed an application intended for High School students to learn more about mathematical functions and their transformations in a playful approach.
+                    </p>
+                    <p class="icon"><i class="devicon-java-plain"></i></p>
+                    <p class="right"><a href="https://github.com/talicopanda/FunctionRide" target="_blank">Explore project &rarr;</a></p>		
+                </li>
+            </ul>
+		</section>
+        <section class="container">
+            <h2 id="ai" class="section-title">Artificial Intelligence</h2>
+            <ul class="flex-grid">	
+                <li class="col-33">	
+                    <img src="https://www.wgu.edu/content/dam/web-sites/blog-newsroom/blog/images/national/2019/august/grey-hat-hacking.jpg" class="image">
+                    <p><strong>String Guesser GA</strong><br>
+                    Developed a Genetic Algorithm capable of guessing the inputted string. Applied techniques including mutation and crossover to arrive at the desired string in a minimal number of iterations.
+                    <br>This project was a part of the 2020 UofT Researchathon.</p>	
+                    <p class="icon"><i class="devicon-python-plain"></i></p>
+                    <p class="right"><a href="https://github.com" target="_blank">Explore project &rarr;</a></p>				
+                </li>	
+                <li class="col-33">	
+                    <img src="http://www.multiling.tw/wp-content/uploads/2018/07/AdobeStock_199237766-1024x630.jpeg" class="image">
+                    <p><strong>Neural Network from Scratch</strong><br>
+                    Developed an Artificial Neural Network without machine learning libraries (Tensor Flow, Keras, etc) in order to fully grasp the basic fundamentals of an artificial neural network's implementation.</p>	
+                    <p class="icon"><i class="devicon-python-plain"></i></p>
+                    <p class="right"><a href="https://github.com" target="_blank">Explore project &rarr;</a></p>		
+                </li>
+                <li class="col-33">	
+                    <img src="https://www.oriel.ox.ac.uk/sites/default/files/styles/sp_main_wide/public/mathematics.jpg?itok=Hge67u35&timestamp=1465469439" class="image">
+                    <p><strong>Function Ride</strong><br>
+                    Developed an application intended for High School students to learn more about mathematical functions and their transformations in a playful approach.
+                    </p>
+                    <p class="icon"><i class="devicon-java-plain"></i></p>
+                    <p class="right"><a href="https://github.com/talicopanda/FunctionRide" target="_blank">Explore project &rarr;</a></p>		
+                </li>
+            </ul>
+		</section>
+        <section class="container">
+            <h2 id="games" class="section-title">Games</h2>
+            <ul class="flex-grid">	
+                <li class="col-33">	
+                    <img src="https://www.wgu.edu/content/dam/web-sites/blog-newsroom/blog/images/national/2019/august/grey-hat-hacking.jpg" class="image">
+                    <p><strong>String Guesser GA</strong><br>
+                    Developed a Genetic Algorithm capable of guessing the inputted string. Applied techniques including mutation and crossover to arrive at the desired string in a minimal number of iterations.
+                    <br>This project was a part of the 2020 UofT Researchathon.</p>	
+                    <p class="icon"><i class="devicon-python-plain"></i></p>
+                    <p class="right"><a href="https://github.com" target="_blank">Explore project &rarr;</a></p>				
+                </li>	
+                <li class="col-33">	
+                    <img src="http://www.multiling.tw/wp-content/uploads/2018/07/AdobeStock_199237766-1024x630.jpeg" class="image">
+                    <p><strong>Neural Network from Scratch</strong><br>
+                    Developed an Artificial Neural Network without machine learning libraries (Tensor Flow, Keras, etc) in order to fully grasp the basic fundamentals of an artificial neural network's implementation.</p>	
+                    <p class="icon"><i class="devicon-python-plain"></i></p>
+                    <p class="right"><a href="https://github.com" target="_blank">Explore project &rarr;</a></p>		
+                </li>
+                <li class="col-33">	
+                    <img src="https://www.oriel.ox.ac.uk/sites/default/files/styles/sp_main_wide/public/mathematics.jpg?itok=Hge67u35&timestamp=1465469439" class="image">
+                    <p><strong>Function Ride</strong><br>
+                    Developed an application intended for High School students to learn more about mathematical functions and their transformations in a playful approach.
+                    </p>
+                    <p class="icon"><i class="devicon-java-plain"></i></p>
+                    <p class="right"><a href="https://github.com/talicopanda/FunctionRide" target="_blank">Explore project &rarr;</a></p>		
+                </li>
+            </ul>
+		</section>
+        <section class="container">
+            <h2 id="hdl" class="section-title">Hardware Description Language</h2>
+            <ul class="flex-grid">	
+                <li class="col-33">	
+                    <img src="https://www.wgu.edu/content/dam/web-sites/blog-newsroom/blog/images/national/2019/august/grey-hat-hacking.jpg" class="image">
+                    <p><strong>String Guesser GA</strong><br>
+                    Developed a Genetic Algorithm capable of guessing the inputted string. Applied techniques including mutation and crossover to arrive at the desired string in a minimal number of iterations.
+                    <br>This project was a part of the 2020 UofT Researchathon.</p>	
+                    <p class="icon"><i class="devicon-python-plain"></i></p>
+                    <p class="right"><a href="https://github.com" target="_blank">Explore project &rarr;</a></p>				
+                </li>	
+                <li class="col-33">	
+                    <img src="http://www.multiling.tw/wp-content/uploads/2018/07/AdobeStock_199237766-1024x630.jpeg" class="image">
+                    <p><strong>Neural Network from Scratch</strong><br>
+                    Developed an Artificial Neural Network without machine learning libraries (Tensor Flow, Keras, etc) in order to fully grasp the basic fundamentals of an artificial neural network's implementation.</p>	
+                    <p class="icon"><i class="devicon-python-plain"></i></p>
+                    <p class="right"><a href="https://github.com" target="_blank">Explore project &rarr;</a></p>		
+                </li>
+                <li class="col-33">	
+                    <img src="https://www.oriel.ox.ac.uk/sites/default/files/styles/sp_main_wide/public/mathematics.jpg?itok=Hge67u35&timestamp=1465469439" class="image">
+                    <p><strong>Function Ride</strong><br>
+                    Developed an application intended for High School students to learn more about mathematical functions and their transformations in a playful approach.
+                    </p>
+                    <p class="icon"><i class="devicon-java-plain"></i></p>
+                    <p class="right"><a href="https://github.com/talicopanda/FunctionRide" target="_blank">Explore project &rarr;</a></p>		
+                </li>
+            </ul>
+		</section>
+        <section class="container">
+            <h2 id="hdl" class="section-title">Hardware Description Language</h2>
+            <ul class="flex-grid">	
+                <li class="col-33">	
+                    <img src="https://www.wgu.edu/content/dam/web-sites/blog-newsroom/blog/images/national/2019/august/grey-hat-hacking.jpg" class="image">
+                    <p><strong>String Guesser GA</strong><br>
+                    Developed a Genetic Algorithm capable of guessing the inputted string. Applied techniques including mutation and crossover to arrive at the desired string in a minimal number of iterations.
+                    <br>This project was a part of the 2020 UofT Researchathon.</p>	
+                    <p class="icon"><i class="devicon-python-plain"></i></p>
+                    <p class="right"><a href="https://github.com" target="_blank">Explore project &rarr;</a></p>				
+                </li>	
+                <li class="col-33">	
+                    <img src="http://www.multiling.tw/wp-content/uploads/2018/07/AdobeStock_199237766-1024x630.jpeg" class="image">
+                    <p><strong>Neural Network from Scratch</strong><br>
+                    Developed an Artificial Neural Network without machine learning libraries (Tensor Flow, Keras, etc) in order to fully grasp the basic fundamentals of an artificial neural network's implementation.</p>	
+                    <p class="icon"><i class="devicon-python-plain"></i></p>
+                    <p class="right"><a href="https://github.com" target="_blank">Explore project &rarr;</a></p>		
+                </li>
+                <li class="col-33">	
+                    <img src="https://www.oriel.ox.ac.uk/sites/default/files/styles/sp_main_wide/public/mathematics.jpg?itok=Hge67u35&timestamp=1465469439" class="image">
+                    <p><strong>Function Ride</strong><br>
+                    Developed an application intended for High School students to learn more about mathematical functions and their transformations in a playful approach.
+                    </p>
+                    <p class="icon"><i class="devicon-java-plain"></i></p>
+                    <p class="right"><a href="https://github.com/talicopanda/FunctionRide" target="_blank">Explore project &rarr;</a></p>		
+                </li>
+            </ul>
+		</section>
+        <section class="container">
+            <h2 id="assembly" class="section-title">Assembly Language</h2>
+            <ul class="flex-grid">	
+                <li class="col-33">	
+                    <img src="https://www.wgu.edu/content/dam/web-sites/blog-newsroom/blog/images/national/2019/august/grey-hat-hacking.jpg" class="image">
+                    <p><strong>String Guesser GA</strong><br>
+                    Developed a Genetic Algorithm capable of guessing the inputted string. Applied techniques including mutation and crossover to arrive at the desired string in a minimal number of iterations.
+                    <br>This project was a part of the 2020 UofT Researchathon.</p>	
+                    <p class="icon"><i class="devicon-python-plain"></i></p>
+                    <p class="right"><a href="https://github.com" target="_blank">Explore project &rarr;</a></p>				
+                </li>	
+                <li class="col-33">	
+                    <img src="http://www.multiling.tw/wp-content/uploads/2018/07/AdobeStock_199237766-1024x630.jpeg" class="image">
+                    <p><strong>Neural Network from Scratch</strong><br>
+                    Developed an Artificial Neural Network without machine learning libraries (Tensor Flow, Keras, etc) in order to fully grasp the basic fundamentals of an artificial neural network's implementation.</p>	
+                    <p class="icon"><i class="devicon-python-plain"></i></p>
+                    <p class="right"><a href="https://github.com" target="_blank">Explore project &rarr;</a></p>		
+                </li>
+                <li class="col-33">	
+                    <img src="https://www.oriel.ox.ac.uk/sites/default/files/styles/sp_main_wide/public/mathematics.jpg?itok=Hge67u35&timestamp=1465469439" class="image">
+                    <p><strong>Function Ride</strong><br>
+                    Developed an application intended for High School students to learn more about mathematical functions and their transformations in a playful approach.
+                    </p>
+                    <p class="icon"><i class="devicon-java-plain"></i></p>
+                    <p class="right"><a href="https://github.com/talicopanda/FunctionRide" target="_blank">Explore project &rarr;</a></p>		
+                </li>
+            </ul>
+		</section>
+        <section class="container">
+            <h2 id="stats" class="section-title">Data Science</h2>
+            <ul class="flex-grid">	
+                <li class="col-33">	
+                    <img src="https://www.wgu.edu/content/dam/web-sites/blog-newsroom/blog/images/national/2019/august/grey-hat-hacking.jpg" class="image">
+                    <p><strong>String Guesser GA</strong><br>
+                    Developed a Genetic Algorithm capable of guessing the inputted string. Applied techniques including mutation and crossover to arrive at the desired string in a minimal number of iterations.
+                    <br>This project was a part of the 2020 UofT Researchathon.</p>	
+                    <p class="icon"><i class="devicon-python-plain"></i></p>
+                    <p class="right"><a href="https://github.com" target="_blank">Explore project &rarr;</a></p>				
+                </li>	
+                <li class="col-33">	
+                    <img src="http://www.multiling.tw/wp-content/uploads/2018/07/AdobeStock_199237766-1024x630.jpeg" class="image">
+                    <p><strong>Neural Network from Scratch</strong><br>
+                    Developed an Artificial Neural Network without machine learning libraries (Tensor Flow, Keras, etc) in order to fully grasp the basic fundamentals of an artificial neural network's implementation.</p>	
+                    <p class="icon"><i class="devicon-python-plain"></i></p>
+                    <p class="right"><a href="https://github.com" target="_blank">Explore project &rarr;</a></p>		
+                </li>
+                <li class="col-33">	
+                    <img src="https://www.oriel.ox.ac.uk/sites/default/files/styles/sp_main_wide/public/mathematics.jpg?itok=Hge67u35&timestamp=1465469439" class="image">
+                    <p><strong>Function Ride</strong><br>
+                    Developed an application intended for High School students to learn more about mathematical functions and their transformations in a playful approach.
+                    </p>
+                    <p class="icon"><i class="devicon-java-plain"></i></p>
+                    <p class="right"><a href="https://github.com/talicopanda/FunctionRide" target="_blank">Explore project &rarr;</a></p>		
+                </li>
+            </ul>
+		</section>
+	</div>	
+		<address role="contentinfo">
+            <footer id="contact" class="dark" role="">	
+                <div class="container">	
+                    <ul class="flex-grid">	
+                        <li class="col-40">	
+<!--                            <div class="center">-->
+                                <p class="section-title">Get in touch</p>
+<!--                            </div>-->
+                        </li>
+                        <li class="col-60 right">
+                            <p class="big"><a href="mailto:tales.scopinho@mail.utoronto.ca">tales.scopinho@mail.utoronto.ca</a> &bull;
+                            <a href="https://www.linkedin.com/in/tales-scopinho-ba055b1a6/">LinkedIn</a>
+                            </p>							
+                            <p>Copyright &copy; 2020 Tales Scopinho
+                            </p>					
+                        </li>					
+                    </ul>
+                </div>
+            </footer>
+        </address>					
+	</body>
 </html>
-

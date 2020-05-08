@@ -677,7 +677,9 @@ p.form-submit {
 #commentform {
 	padding-bottom: 6rem
 }
-
+.display .section-title {
+    margin: 0 0 3rem 3.5rem;
+}
 
 /* Carbonads specific */
 /* ------------------------------------------------- */
