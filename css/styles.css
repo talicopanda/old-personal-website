@@ -409,6 +409,10 @@ img {
     width: 100%;
     border-radius: 2%;
 }
+.inline p {
+    display: inline;
+    padding-bottom: 5rem;
+}
 
 /* Different backgrounds */
 /* ------------------------------------------------- */
