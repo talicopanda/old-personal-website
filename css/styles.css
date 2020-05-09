@@ -406,9 +406,16 @@ img {
     width: 100%;
 }
 .image {
+    height: 20rem;
+    object-fit: cover;
+    border-radius: 2%;
+    margin-bottom: 1rem;
+}
+.image-narrow {
     width: auto;
     max-width: 100%;
     height: 20rem;
+    object-fit: cover;
     border-radius: 2%;
     margin-bottom: 1rem;
 }
