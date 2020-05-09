@@ -402,13 +402,14 @@ em {
 .gray {
 	color: #a9a9a9;
 }
-img {
+.home img {
     width: 100%;
 }
 .image {
+    max-width: 100%;
     height: 20rem;
-    width: 100%;
     border-radius: 2%;
+    margin-bottom: 1rem;
 }
 .inline p {
     display: inline;
