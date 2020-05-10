@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-92000250-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-92000250-1');
+        </script>
+        <title>Bounce Around</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="description" content="Bounce Around: My First Game">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">	
+        <meta name="HandheldFriendly" content="true">
+        
+        <link rel="shortcut icon" href="../res/favicon_opposite.ico"> 
+        <link rel="stylesheet" href="../css/styles.css">
+        <!--- Retrieves Jost font from indestructibletype.com --->
+        <link rel="stylesheet" href="https://indestructibletype.com/fonts/Jost.css" type="text/css" charset="utf-8" />
+        <style>
+            canvas {
+                border: 1px solid #d3d3d3;
+                background-color: #f1f1f1;
+                position: absolute;
+                top:0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                margin:auto;
+            }
+        </style>
+    </head>
+
+<body class="post-template-default single single-post postid-747 single-format-standard" onload="startGame()" style="border-bottom: 0;">
+    
+    <div class="navigation">
+        <nav class="container" role="navigation">
+            <ul class="flex-grid">
+                <li class="col-50">
+					<a href="https://scopinho.com" id="logo">Tales Scopinho</a>
+                </li>
+                <li class="col-50">
+                    <div class="menu-primary-container">
+                        <ul id="menu-primary" class="menu">
+                            <li id="menu-item-746" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-746"><a href="https://scopinho.com" aria-current="page">About</a></li>
+                            <li id="menu-item-745" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-745"><a    href="https://scopinho.com/cv.html" alt="Curriculum Vitae"><i>CV</i></a></li>
+                            <li id="menu-item-745" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-745"><a href="https://scopinho.com/blog.html" alt="Blog">Blog</a></li>
+                        </ul>
+                    </div>
+                </li>	
+            </ul>
+        </nav>
+    </div>
+    
+    <script>
+        window.addEventListener('keydown', function(e) {
+            if(e.keyCode == 32 && e.target == document.body) {
+            e.preventDefault();
+            }
+        });
+    </script>
+    
+    <section class="container">
+		<div class="flex-grid">
+			<div class="col-30">
+				<h1>Instructions</h1>
+                <p></p>
+                <p>Press <em>space bar</em> to jump and avoid the obstacles</p>
+                <p>Try to beat my high score of 15 ;)</p>
+			</div>	
+		</div>	
+	</section>	
+    
+    
+    <script>
+        /*Tales Scopinho
+        03/06/2018
+        JavaScript Challenge
+        Developer's Record: 15
+        */
+        //variables declaration
+        var myGamePiece;
+        var myObstacles = [];
+        var myScore;
+        var jumpDirection = 0;
+        var score = 0;
+        var start = false;
+
+        function startGame() {//runs once when the game starts
+            myGameArea.start();
+            myGamePiece = new circle(20, "blue", myGameArea.canvas.width/2, myGameArea.canvas.height/2);
+            myScore = new text("30px", "Consolas", "black", 30, 50);   
+        }
+
+        var myGameArea = {//setting up the game area and gathering inputs
+            canvas : document.createElement("canvas"),
+            start : function() {
+                this.canvas.width = window.innerWidth * 0.3;
+                this.canvas.height = window.innerHeight * 0.8;
+                this.context = this.canvas.getContext("2d");
+                document.body.insertBefore(this.canvas, document.body.childNodes[0]);
+                this.frameNo = 0; 
+                this.interval = setInterval(updateGameArea, 10);
+                window.addEventListener('keydown', function (e) { //reading spacebar
+                    myGameArea.key = e.keyCode;
+                })
+                window.addEventListener('keyup', function (e) { //reading spacebar
+                    myGameArea.key = false;
+                })
+                window.addEventListener('touchmove', function (e) {
+                    //touchscreen
+                })
+            },
+            clear : function() {
+                this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
+            }, 
+            stop : function() {
+                clearInterval(this.interval);
+            }
+        }
+
+        function rectangle(width, height, color, x, y) {//creates a rectangle
+            this.width = width;
+            this.height = height;
+            this.speedX = 0;
+            this.speedY = 0;
+            this.x = x;
+            this.y = y;    
+            this.update = function(){
+                ctx = myGameArea.context;
+                ctx.fillStyle = color;
+                ctx.fillRect(this.x, this.y, this.width, this.height);
+            }
+            this.newPos = function() {
+                this.x += this.speedX;
+                this.y += this.speedY;        
+            }
+        }
+
+        function circle(radius, color, x, y) {//creates a circle
+            this.radius = radius;
+            this.speedX = 0;
+            this.speedY = 0;
+            this.x = x;
+            this.y = y;
+            this.update = function(){
+                ctx = myGameArea.context;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, Math.PI*2);
+                ctx.fillStyle = color;
+                ctx.fill();
+                ctx.closePath();
+            }
+            this.newPos = function() {
+                this.x += this.speedX;
+                this.y += this.speedY; 
+                //makes the ball appear on the other side if goes out of the canvas
+                if(this.x-this.radius > myGameArea.canvas.width){
+                    this.x = -this.radius;
+                } else if(this.x+this.radius < 0){
+                    this.x = myGameArea.canvas.width+this.radius;
+                }
+            }
+            this.crashWith = function(otherobj) { //detects collision between obstacles and GamePiece
+                var circle={x:this.x,y:this.y,r:this.radius};
+                var rect={x:otherobj.x,y:otherobj.y,w:otherobj.width,h:otherobj.height};
+
+                var distX = Math.abs(circle.x - rect.x-rect.w/2);
+                var distY = Math.abs(circle.y - rect.y-rect.h/2);
+
+                if (distX > (rect.w/2 + circle.r)) { return false; }
+                if (distY > (rect.h/2 + circle.r)) { return false; }
+
+                if (distX <= (rect.w/2)) { return true; } 
+                if (distY <= (rect.h/2)) { return true; }
+
+                var dx=distX-rect.w/2;
+                var dy=distY-rect.h/2;
+                return (dx*dx+dy*dy<=(circle.r*circle.r));
+            }
+        }
+
+        /*function triangle(x1,y1,x2,y2,x3,y3,color) { 
+            this.x1 = x1;
+            this.y1 = y1;
+            this.x2 = x2;
+            this.y2 = y2;
+            this.x3 = x3;
+            this.y3 = y3;
+            this.update = function(){
+                ctx = myGameArea.context;
+                ctx.beginPath();
+                ctx.moveTo(x1, y1);
+                ctx.lineTo(x2, y2);
+                ctx.lineTo(x3, y3);
+                ctx.fillStyle = color;
+                ctx.closePath();
+            }
+        }*/
+
+        function text(size, font, color, x, y){//creates a text
+            this.size = size;
+            this.font = font;
+            this.x = x;
+            this.y = y;
+            this.update = function(){
+                ctx.font = this.size + " " + this.font;
+                ctx.fillStyle = color;
+                ctx.fillText(this.text, this.x, this.y);
+            }
+        }
+
+        function countingscore(y, myObstacles) {//counts the score every time GamePiece goes through an obstacle
+            this.y = y;
+            this.myObstacles = myObstacles;
+            if(this.y>this.myObstacles[score*2].y){
+                score++;
+            }
+        }
+
+        function image(width, height, src, x, y){ //loads an image
+            this.image = new Image();
+            this.image.src = src;
+            this.width = width;
+            this.height = height;
+            this.x = x;
+            this.y = y;
+            this.update = function() {
+                ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
+            }
+        }
+
+
+        function updateGameArea() { //runs every 10 miliseconds
+            myGameArea.clear();
+            var obstacleLength = 120;
+            for (i = 0; i < myObstacles.length; i += 1) {
+                if (myGamePiece.crashWith(myObstacles[i]) || myGamePiece.y+myGamePiece.radius > myGameArea.canvas.height || myGamePiece.y-myGamePiece.radius < -200) { //checks if the user lost the game
+                    myGameArea.stop();
+                    alert("Game Over!");
+                    document.location.reload();
+                    return;
+                } 
+            }
+            spacePressed();
+            if(start){
+                myGameArea.frameNo += 1;
+                if (myGameArea.frameNo == 1 || myGameArea.canvas.height - myObstacles[myObstacles.length-1].y > 350) { //creates a new obstacle when the game starts and every time the previous obstacle is more than 350 pixels in the canvas
+                    x = Math.random()*(myGameArea.canvas.width - obstacleLength);
+                    y = myGameArea.canvas.height;
+                    myObstacles.push(new rectangle(x, 10, "grey", 0, y));
+                    myObstacles.push(new rectangle(myGameArea.canvas.width, 10, "grey", x+obstacleLength, y));
+                }
+                gravity();
+                sidejump();
+                myGamePiece.newPos();    
+
+            }
+            for (i = 0; i < myObstacles.length; i += 1) {//moves the obstacles (faster every time)
+                myObstacles[i].y += -0.7-(score/10);
+                myObstacles[i].update();
+            }
+            myGamePiece.update();
+            if(myObstacles[score*2] != null){countingscore(myGamePiece.y, myObstacles);}
+            myScore.text = score;
+            myScore.update();
+        }
+
+        function spacePressed(){//checks if space is pressed
+            if(myGameArea.key && myGameArea.key == 32){
+                start = true;
+                return true;
+            } else {
+                return false;
+            }
+        }
+        function moveupright() {//makes GamePiece jump to the right
+            myGamePiece.speedY = -Math.pow(1.8,2);
+            myGamePiece.speedX = 0.9;  
+        }
+
+        function gravity() {//adds gravity to the game
+            myGamePiece.speedY += Math.pow(0.2,2); 
+        }
+
+        function moveupleft() {//makes GamePiece jump to the left
+            myGamePiece.speedY = -Math.pow(1.8,2);
+            myGamePiece.speedX = -0.9; 
+        }
+
+        function sidejump(){//alternate the jump side every for every space pressed
+            if(spacePressed() && jumpDirection === 0 && !registeredAlready){
+                moveupright();
+                jumpDirection = 1;
+                registeredAlready = true;
+            } else if(spacePressed() && jumpDirection === 1 && !registeredAlready){
+                moveupleft();
+                jumpDirection = 0;
+                registeredAlready = true;
+            } else if(!spacePressed()) {
+                registeredAlready = false;
+            }
+        }
+
+
+    </script>	
+	</body>
+</html>
