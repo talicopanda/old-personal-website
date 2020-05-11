@@ -27,22 +27,33 @@
     <body class="home page-template page-template-page-templates page-template-front-page page-template-page-templatesfront-page-php page page-id-274">
         
         <!-- Smooth Scrolling on all devices -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script>
-            $('a[href^="#"]').click(function () {
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+          // Add smooth scrolling to all links
+          $("a").on('click', function(event) {
 
-            if($.attr(this, 'behaviour') === "smooth") {
+            // Make sure this.hash has a value before overriding default behavior
+            if (this.hash !== "") {
+              // Prevent default anchor click behavior
+              event.preventDefault();
+
+              // Store hash
+              var hash = this.hash;
+
+              // Using jQuery's animate() method to add smooth page scroll
+              // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
               $('html, body').animate({
-                scrollTop: $('[name="' + $.attr(this, 'href').substr(1) + '"]').offset().top
-              }, 800);
-            } else {
-              $('html, body').scrollTop($('[name="' + $.attr(this, 'href').substr(1) + '"]').offset().top);
-            }
+                scrollTop: $(hash).offset().top
+              }, 800, function(){
 
-
-            return false;
+                // Add hash (#) to URL when done scrolling (default click behavior)
+                window.location.hash = hash;
+              });
+            } // End if
+          });
         });
-        </script>
+    </script>
 
         <a id="float-contact" href="#contact">Contact</a>
         
@@ -156,7 +167,7 @@
                 </li>	
                 <li class="col-33">	
                     <p class="no">2015</p>
-                    <p><a href="http://oba.org.br/site/index.php?p=conteudo&idcat=22&pag=conteudo&acao=mostra&idaluno=737764&olimp=oba&ed=2015" alt="Bronze Medal" target="_blank"><strong>Bronze Medalist: National Astronomy Olympiad</strong></a><br>
+                    <p><a href="http://oba.org.br/site/index.php?p=conteudo&idcat=22&pag=conteudo&acao=mostra&idaluno=737764&olimp=oba&ed=2015" alt="Bronze Medal" target="_blank"><strong>2x Bronze Medalist (2014 &amp; 2015): National Astronomy Olympiad</strong></a><br>
                     This single phased <a href="http://www.oba.org.br/site/" alt="Brazilian Astronomy Olympiad" target="_blank">olympiad</a> fetured 784.390 competidors from all over Brazil. Medals were dsitributed based on score thresholds.
                     </p>	
                 </li>
