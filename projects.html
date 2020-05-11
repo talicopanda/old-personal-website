@@ -65,6 +65,18 @@
 			</ul>
 		</nav>
     </div>
+    
+    <script>
+            window.onscroll = function() {myFunction()};
+
+            function myFunction() {
+                var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+                var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                var scrolled = (winScroll / height) * 100;
+                document.getElementById("myBar").style.width = scrolled + "%";
+            }
+        </script>
+    
 	<section class="container">
 		<div class="flex-grid">
 			<div class="col-50">
@@ -227,7 +239,7 @@
                     <p class="right"><a href="https://github.com/talicopanda/assembly/blob/master/get_min_recursive.s" target="_blank">Explore project &rarr;</a></p>				
                 </li>	
                 <li class="col-33">	
-                    <img src="https://lh3.googleusercontent.com/proxy/YEC9Gk3fgK7CcYPiAQEJEuxpAGVXqX2QZTaYuDT6GhTovZvaMNY8PA741L5OlTAauiM-xFy9bgt4BnVUFY9ega57D1OFHMljmcO0UPf6Kh-x2AMqYFq7" class="image">
+                    <img src="https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/rN0W64K4ipau8gxv/videoblocks-data-mining-moving-squares-4k-abstract-video-background_bt-jpftyb_thumbnail-full01.png" class="image">
                     <p><strong>Arrays and Indexing</strong><br>
                     Study in MIPS Assembly Language to find a specific value in the inputted array.</p>	
                     <p class="icon">MIPS</p>
