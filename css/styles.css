@@ -526,7 +526,7 @@ img {
     margin: -0.55em;
 }
 .home .triangles ul {
-    padding: 3% 5% 0;
+    padding: 0% 5% 0;
     font-size: 2.2rem;
     margin: 0;
     list-style: none;
@@ -539,8 +539,8 @@ img {
     display: block;
     height: 0;
     width: 0;
-    position: relative;
-    margin: -1em;
+    position: absolute;
+    margin: 0.3em 0em 0em -1em;
 }
 .section-title {
 	font-size: 8rem;
